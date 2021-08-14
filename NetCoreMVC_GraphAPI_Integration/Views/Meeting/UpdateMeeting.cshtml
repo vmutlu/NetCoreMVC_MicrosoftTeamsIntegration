@@ -1,0 +1,31 @@
+﻿@using NetCoreMVC_GraphAPI_Integration.Models
+@model CalenderMeetingModel
+
+<div style="margin-top:50px">
+
+    <form method="post" action="UpdateMeeting">
+
+        <input type="hidden" name="eventId" value="@Model.Id" />
+
+        <div class="row" style="margin:10px">
+            <label for="Summary" class="col-sm-3">Subject:</label>
+            <input type="text" class="col-sm-6 form-control" name="Subject" value="@Model.Subject" autocomplete="off" />
+        </div>
+        <div class="row" style="margin:10px">
+            <label for="Description" class="col-sm-3">Content:</label>
+            <input type="datetime" class="col-sm-6 form-control" name="Body.Content" value="@Model.Body.Content" autocomplete="off" />
+        </div>
+        <div class="row" style="margin:10px">
+            <label for="Start.DateTime" class="col-sm-3">Start Date Time:</label>
+            <input type="datetime" class="col-sm-6 form-control" name="Start.DateTime" value="@Model.Start.DateTime" autocomplete="off" />
+        </div>
+        <div class="row" style="margin:10px">
+            <label for="End.DateTime" class="col-sm-3">End Date Time:</label>
+            <input type="datetime" class="col-sm-6 form-control" name="End.DateTime" value="@Model.End.DateTime" autocomplete="off" />
+        </div>
+        <div class="row col-sm-3" style="margin:10px">
+            <input type="submit" value="Güncelle" class="btn btn-primary" />
+        </div>
+    </form>
+
+</div>

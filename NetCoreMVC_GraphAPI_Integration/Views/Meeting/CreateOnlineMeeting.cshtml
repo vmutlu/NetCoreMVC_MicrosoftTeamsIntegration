@@ -1,0 +1,27 @@
+﻿
+@if (ViewBag.MeetAddress != null)
+{
+    <ul>
+        <li>Online Meeting oluşturuldu. Aşağıdaki katıl butonuna tıklayarak katılabilirsiniz.</li>
+        <li> <a href="@ViewBag.MeetAddress" class="btn btn-success">Katıl</a> </li>
+    </ul>
+}
+
+<p style="color:red"> Online meeting oluşturma bilgilerini girip oluştur butonuna tıkladğınızda benim hesabım üzerinden bir Microsoft Teams toplantı linki alacaksınız.</p>
+<form method="post" action="CreateOnlineMeeting">
+    <div class="row" style="margin:10px">
+        <label for="Summary" class="col-sm-3">Subject:</label>
+        <input type="text" class="col-sm-6 form-control" name="Subject" value="Example Subject" autocomplete="off" />
+    </div>
+    <div class="row" style="margin:10px">
+        <label for="Start.DateTime" class="col-sm-3">Start Date Time:</label>
+        <input type="datetime" class="col-sm-6 form-control" name="StartDateTime" value="2021-08-15 15:00" autocomplete="off" />
+    </div>
+    <div class="row" style="margin:10px">
+        <label for="End.DateTime" class="col-sm-3">End Date Time:</label>
+        <input type="datetime" class="col-sm-6 form-control" name="EndDateTime" value="2021-08-15 16:00" autocomplete="off" />
+    </div>
+    <div class="row col-sm-3" style="margin:10px">
+        <input type="submit" value="Online Meeting Oluştur" class="btn btn-success" />
+    </div>
+</form>

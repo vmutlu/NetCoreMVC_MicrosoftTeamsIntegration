@@ -1,0 +1,40 @@
+﻿@using NetCoreMVC_GraphAPI_Integration.Models
+@model List<CalenderMeetingModel>
+
+@if (Model.Count != 0)
+{
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Subject</th>
+                    <th>Content</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th><a style="cursor:pointer;  text-decoration:none" class="col-sm-4" onclick="location.href='@Url.Action("GetByEventId","Meeting", new { eventId = item.Id })'"></a></th>
+                        <th>@item.Subject</th>
+                        <th>@Html.Raw(System.Web.HttpUtility.HtmlDecode(@item.Body.Content))</th>
+                        <th>@item.Start.DateTime</th>
+                        <th>@item.End.DateTime</th>
+                        <th>
+                            <a style="cursor:pointer; text-decoration:none;" onclick="location.href='@Url.Action("UpdateMeeting","Meeting",new { eventId=item.Id })'">Güncelle</a>
+                            <a style="cursor:pointer; text-decoration:none;" onclick="location.href='@Url.Action("DeleteMeeting","Meeting",new { eventId=item.Id })'">Sil</a>
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p>No data found</p>
+}

@@ -1,0 +1,17 @@
+﻿@using NetCoreMVC_GraphAPI_Integration.Models
+@model CalenderMeetingModel
+@{
+    ViewBag.Title = "Event";
+}
+
+<div>
+    <div style="margin:20px">
+        <p>Subject: @Model.Subject</p>
+        <p>Content: @Model.Body.Content</p>
+        <p>Start Date: @Model.Start.DateTime</p>
+        <p>End Date: @Model.End.DateTime</p>
+
+        <a href="@Model.OnlineMeeting.JoinUrl" target="_blank">@Model.OnlineMeeting.JoinUrl</a>
+    </div>
+</div>
+

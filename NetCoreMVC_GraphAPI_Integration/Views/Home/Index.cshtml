@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <ul style="color:skyblue">
+        <li>Micrososft Graph API'yi kullanabilmek için lütfen öncelikle "https://developer.microsoft.com/" adresinden bir geliştirici E-Mail adresi alın.(... @@onmicrosoft.com)</li>
+        <li>Daha sonra portal.azure sistemi üzerinde yeni uygulama kayıt ederek uygulama bilgilerini projedeki appsettings.json dosyasına kaydediniz.</li>
+        <li>Uygulamaya gerekli izinleri verdikten sonra projede istediğiniz gibi Microsoft Teams üzerinden online ve takvim meetingleri oluşturabilirsiniz.</li>
+        <li>Örnek uygulamayı kullanabilmek için refresh token alarak devam et butonuna tıklayarak devam ediniz. Giriş yap butonuna tıkladığınızda yönlendirilen ekranda sizden microsoft geliştirici e-mail adresi ile giriş yapıp izinleri onaylamanız istenecektir.</li>
+        <li>Giriş yap butonu ile token alamazsınız. Sadece refresh token ile alınan tokeni yenileyin</li>
+        <li>Kendi uygulamanızı azure ortamında oluşturup appsetting.json dosyalarına kendi uygulama bilgilerinizi girerek kendi azure ortamında ki uygulamanıza erişebilirsiniz.</li>
+    </ul>
+    <hr />
+    <div class="text-center">
+        <a href="OAuth/Login" class="btn btn-success mr-2">Giriş Yap</a>
+        <a href="OAuth/RefleshToken" class="btn btn-info">Refresh Token Alarak Toplantı Oluştur</a>
+    </div>
+</div>
